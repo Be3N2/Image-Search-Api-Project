@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Image Search Abstraction Layer</title>
-    <meta name="description" content="Setup for other projects">
+    <title>Image Search Node</title>
+    <meta name="description" content="Image Search">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,16 +11,58 @@
   </head>
   <body>
 
+    <h1>
+      Image Search Abstraction Layer
+    </h1>
+      
+    <h3>
+      How to Use
+    </h3>
+    <hr>
+    <p style="margin-left: 10px; max-width: 600px; line-height: 1.3;">
+      Node search engine based on google that responds with a json object containing a url and other information on each result.
+      To search use this homepage with /search/yourSearch where yourSearch is whatever images your looking for. Can request different result pages by adding ?page=1 which can be set to any positive integer. 
+      This project uses the Google Custom Search Engine through a node library called google-images. Can get search history at /history and recieve
+      the history of searches in json formatting. Simple history database with mongoDB courtesy of mlab.
+    </p>
+    <hr>
+    <h4>
+      A few example calls:
+    </h4>
+    <ul style="list-style: none; line-height: 2;">
+      <li>https://image-abs.glitch.me/search/dalmatian puppy</li>
+      <li>https://image-abs.glitch.me/search/kitten?page=1</li>
+    </ul>
 
-    <main>
-      <h1>
-        Image Search Abstraction Layer
-      </h1>
-    </main>
+    <h4>
+      The json response structure: 
+    </h4>
+    <pre style="margin-left: 10px; line-height: 1.3;">
+     {
+      "type": "image/jpeg", "width": 480, "height": 360, "size": 19463, "url": "https://examplelink/image.jpg",
+      "thumbnail": {"url": "https://examplelink", "width":129, "height":97},
+      "description": "Example Description", "parentPage": "https://parentlink.example.com"
+     }
+    </pre>
+    
+    <h4>
+      Can also view search history at /history; 
+    </h4>
+    <p style="margin-left: 10px; line-height: 1.3;">
+       https://image-abs.glitch.me/history<br>
+      {"search": "dalmation puppy", "page": 1, "time": 1508264514814}, <br>
+      {"search": "kitten", "page": 1, "time": 1508265610124}<br><br>
+      Time is in milliseconds from Javascript Date object 
+    </p>
 
-    <footer>
-      Made by Ben Wakefield
-    </footer>
+    <br>
+    <hr>
+    <p>
+      Project made by Ben Wakefield for <a href="https://www.freecodecamp.org/be3n2">Freecodecamp</a>.
+      Source code and more info available on <a href="https://github.com/Be3N2/Image-Search-Api-Project">Github</a>.
+      <br>Documentation on the <a href="https://www.npmjs.com/package/google-images"> google-images</a> library.
+    </p>
+    <br>
 
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
             integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="

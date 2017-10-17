@@ -5,14 +5,15 @@
 
   "name": "Image-Search",
   "version": "0.0.1",
-  "description": "What am I about?",
+  "description": "Image search abstraction layer",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.15.5",
-    "google-images": "*"
+    "google-images": "*",
+    "mongodb": "*"
   },
   "engines": {
     "node": "8.x"
