@@ -4,8 +4,8 @@
 var express = require('express');
 var app = express();
 
+//super easy and amazing api! https://www.npmjs.com/package/google-images
 const GoogleImages = require('google-images');
-
 const client = new GoogleImages(process.env.CSE_ID,  process.env.API_KEY);
 
 app.use(express.static('public'));
@@ -23,9 +23,11 @@ app.get("/search/:search", function(request, response) {
   var input = request.params.search;
   var value = request.query.page;
   
-  var result = client.search(input, {page: value});
-
-  console.log(result);
+  client.search(input, {page: value}).then(function(val) {
+    response.send(val);
+  }).catch(function(err) {
+    var err = {err: err};
+    response.send(err);
+  });
   
-  response.send(input + " value: " + value);
 });
