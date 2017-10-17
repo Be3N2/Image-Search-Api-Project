@@ -11,10 +11,10 @@ Simple search history database made with mongoDB courtesy of mlab.
 
 Made on glitch and so it is up and running over there ready to use: https://url-shortener-node.glitch.me/
 
-The history is stored on a mongoDB database hosted on mLab. A surprisingly simple back end project for freecodecamp and I
+This project was made for freecodecamp and for me to learn backend. It went pretty smooth and I
 believe a big part of that was because of how simple it is to use the google-images library, big thanks to them for making it easy on me.
 
-Go check the image searching library here: https://www.npmjs.com/package/google-images
+Can check out the image searching library here: https://www.npmjs.com/package/google-images
 
 Here is my freecodecamp profile: https://www.freecodecamp.org/be3n2
 
